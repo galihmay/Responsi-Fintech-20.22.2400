@@ -1,4 +1,4 @@
-package com.galihmayangga.responsifintech;
+package com.galihmayangga.responsifintech.ui;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.galihmayangga.responsifintech.R;
 
 public class RecoveryActivity extends AppCompatActivity {
 
