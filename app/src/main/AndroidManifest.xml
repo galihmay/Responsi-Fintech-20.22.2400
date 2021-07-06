@@ -11,8 +11,9 @@
         android:theme="@style/Theme.ResponsiFintech20222400">
         <activity android:name=".RecoveryActivity"
             android:parentActivityName=".LoginActivity"></activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity"></activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
