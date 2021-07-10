@@ -3,6 +3,7 @@ package com.galihmayangga.responsifintech.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -25,10 +26,12 @@ public class HomeActivity extends AppCompatActivity implements HomeMvvm.View {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("APK Bayar Dulu");
         ActivityHomeBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.profilepicture);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         binding.setVm(new HomeViewModel(this));
-
-
     }
 
     @Override

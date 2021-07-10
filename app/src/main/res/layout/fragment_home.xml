@@ -4,14 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_gray"
     tools:context=".ui.HomeFragment">
+
+
 
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-    >
+        android:layout_below="@+id/garis"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -25,6 +34,8 @@
 
             <ImageView
                 android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="left"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:text="Pay"
@@ -34,7 +45,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_marginLeft="100dp"
+                android:layout_gravity="center_horizontal"
                 android:text="Pay"
                 app:srcCompat="@drawable/ic_history_dark" />
 
@@ -42,7 +53,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_marginLeft="200dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="15dp"
                 android:text="Pay"
                 app:srcCompat="@drawable/account" />
                 />
@@ -52,25 +64,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pay"
-                android:textSize="30sp"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textSize="25sp"
                  />
 
             <TextView
                 android:layout_marginTop="70dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
+                android:layout_gravity="center_horizontal"
                 android:text="History"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 />
 
             <TextView
                 android:layout_marginTop="70dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="200dp"
+                android:layout_gravity="right"
                 android:text="Account"
-                android:textSize="30sp"
+                android:layout_marginEnd="5dp"
+                android:textSize="25sp"
                 />
 
 
@@ -85,12 +100,12 @@
 
 
 
-    </ScrollView>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:textSize="20dp"
         android:text="Your Recomendation "/>
@@ -100,55 +115,113 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/black"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
 
         />
 
-    <GridLayout
+
+
+
+
+        <GridLayout
         android:id="@+id/GridLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="30dp"
         android:rowCount="2"
+            android:layout_marginBottom="20dp"
         android:layout_below="@id/garis"
         android:orientation="horizontal"
       >
         <androidx.cardview.widget.CardView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-            android:background="@color/black"
-            app:cardBackgroundColor="@color/black"
+            android:layout_marginLeft="10dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="4dp">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="50dp"
+                android:text="Item 1"
+                android:textSize="25dp"/>
+
+
         </androidx.cardview.widget.CardView>
+
+
 
         <androidx.cardview.widget.CardView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:cardBackgroundColor="@color/purple_200"
+            android:layout_marginLeft="32dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="4dp">
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="50dp"
+                android:text="Item 2"
+                android:textSize="25dp"/>
+
+
         </androidx.cardview.widget.CardView>
+
 
         <androidx.cardview.widget.CardView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:cardBackgroundColor="@color/purple_200"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="4dp">
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="50dp"
+                android:text="Item 3"
+                android:textSize="25dp"/>
+
+
         </androidx.cardview.widget.CardView>
+
+
+
         <androidx.cardview.widget.CardView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@color/black"
-            app:cardBackgroundColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="32dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="4dp">
 
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="50dp"
+                android:text="Item 4"
+                android:textSize="25dp"/>
 
+
+        </androidx.cardview.widget.CardView>
 
     </GridLayout>
 
 
+</LinearLayout>
+    </ScrollView>
 </FrameLayout>
