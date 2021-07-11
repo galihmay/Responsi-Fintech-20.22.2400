@@ -14,8 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ResponsiFintech20222400">
-        <activity android:name=".ui.PaymentActivity"
-            android:parentActivityName=".ui.HomeActivity"></activity>
+        <activity android:name=".ui.HelpActivity"></activity>
+        <activity android:name=".ui.PasswordActivity" />
+        <activity android:name=".ui.CreditCardActivity" />
+        <activity android:name=".ui.AccountBankActivity" />
+        <activity android:name=".ui.ProfileActivity"
+            android:parentActivityName=".ui.HomeActivity"/>
+        <activity
+            android:name=".ui.PaymentActivity"
+            android:parentActivityName=".ui.HomeActivity" />
         <activity
             android:name=".ui.RecoveryActivity"
             android:parentActivityName=".ui.LoginActivity" />
