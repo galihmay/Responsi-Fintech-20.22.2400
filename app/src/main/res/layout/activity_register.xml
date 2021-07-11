@@ -23,7 +23,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etEmailReg"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -46,7 +46,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPasswordReg"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -70,7 +70,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/etConfirmPassword"
+        android:id="@+id/etConfirmPasswordReg"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
