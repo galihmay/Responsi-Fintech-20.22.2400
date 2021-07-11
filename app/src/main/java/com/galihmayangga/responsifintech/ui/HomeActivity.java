@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity implements HomeMvvm.View {
         setTitle("APK Bayar Dulu");
         ActivityHomeBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.profilepicture);
+        getSupportActionBar().setIcon(R.mipmap.profile_picture_round);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         binding.setVm(new HomeViewModel(this));
     }
