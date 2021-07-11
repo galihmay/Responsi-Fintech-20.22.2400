@@ -3,24 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_gray"
     tools:context=".ui.PaymentFragment">
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/garis"
-        >
+        android:layout_below="@+id/garis">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="payment" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:text="Scan Here"
+                android:textSize="20sp" />
+
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:baselineAlignBottom="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/qrscanner" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:text="Or Input Your Code Payment"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtpaymentcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textColor="#0090FF "
+                android:text="here"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </ScrollView>
