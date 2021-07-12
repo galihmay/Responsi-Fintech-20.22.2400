@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.galihmayangga.responsifintech.R;
 import com.galihmayangga.responsifintech.database.DatabaseHelper;
-import com.galihmayangga.responsifintech.database.ShowEmailPref;
+import com.galihmayangga.responsifintech.database.ShowUserDataPref;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.etPasswordReg) EditText EditTextPassword;
     @BindView(R.id.etConfirmPasswordReg) EditText EditTextConfirmPassword;
     @BindView(R.id.btnRegister) Button buttonRegister;
-    ShowEmailPref showEmailPref;
+    ShowUserDataPref showUserDataPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         ButterKnife.bind(this);
-        showEmailPref = new ShowEmailPref(this);
+        showUserDataPref = new ShowUserDataPref(this);
 
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +44,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String strEmail = EditTextEmail.getText().toString();
                 String strPassword = EditTextPassword.getText().toString();
                 String strPasswordConf = EditTextConfirmPassword.getText().toString();
-                showEmailPref.saveSPString(ShowEmailPref.SP_EMAIL, strEmail);
-                showEmailPref.saveSPBoolean(ShowEmailPref.SP_SUDAH_LOGIN, true);
+                showUserDataPref.saveSPString(ShowUserDataPref.SP_EMAIL, strEmail);
+                showUserDataPref.saveSPBoolean(ShowUserDataPref.SP_SUDAH_OK, true);
                 if (strPassword.equals(strPasswordConf)) {
                     Boolean daftar = db.insertUser(strEmail, strPassword);
                     if (daftar == true) {

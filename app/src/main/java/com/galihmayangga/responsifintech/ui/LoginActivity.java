@@ -8,12 +8,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.galihmayangga.responsifintech.R;
 import com.galihmayangga.responsifintech.database.DatabaseHelper;
-import com.galihmayangga.responsifintech.database.ShowEmailPref;
+import com.galihmayangga.responsifintech.database.ShowUserDataPref;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.etEmailLog) EditText  EditTextEmail;
     @BindView(R.id.etPasswordLog) EditText EditTextPassword;
     @BindView(R.id.btnLogin) Button buttonLogin;
-    ShowEmailPref showEmailPref;
+    ShowUserDataPref showUserDataPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         ButterKnife.bind(this);
-        showEmailPref = new ShowEmailPref(this);
+        showUserDataPref = new ShowUserDataPref(this);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
                 String strEmail = EditTextEmail.getText().toString();
                 String strPassword = EditTextPassword.getText().toString();
                 Boolean masuk = db.checkLogin(strEmail, strPassword);
-                showEmailPref.saveSPString(ShowEmailPref.SP_EMAIL, strEmail);
-                showEmailPref.saveSPBoolean(ShowEmailPref.SP_SUDAH_LOGIN, true);
+                showUserDataPref.saveSPString(ShowUserDataPref.SP_EMAIL, strEmail);
+                showUserDataPref.saveSPBoolean(ShowUserDataPref.SP_SUDAH_OK, true);
                 if (masuk == true) {
                     Boolean updateSession = db.upgradeSession("ada", 1);
                     if (updateSession == true) {

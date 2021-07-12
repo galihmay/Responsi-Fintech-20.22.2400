@@ -7,13 +7,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
-        super(context, "loginSQLite.db", null, 1);
+        super(context, "dbApkBayarDulu.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE session(id integer PRIMARY KEY, login text)");
-        db.execSQL("CREATE TABLE user(id integer PRIMARY KEY AUTOINCREMENT, email text, password text, name text, address txt)");
+        db.execSQL("CREATE TABLE user(id integer PRIMARY KEY AUTOINCREMENT, email text, password text, name text, address text)");
         db.execSQL("INSERT INTO session(id, login) VALUES(1, 'kosong')");
     }
 
@@ -64,7 +64,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    //check login
+
+    public Boolean insertProfile(String name, String address) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("address", address);
+        long insert = db.insert("user", null, contentValues);
+        if (insert == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    //cek login
     public Boolean checkLogin(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM user WHERE email = ? AND password = ?", new String[]{email, password});
