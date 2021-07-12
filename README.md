@@ -2,7 +2,7 @@
 Responsi Fintech (S1_FINTECH1(SI115))
 
 Daftar Responsi :
-Responsi 1 = 6 Juli 2021 
+Responsi 1 = 6 Juli 2021 <br/>
 Responsi 2 = 10 - 12 Juli 2021 
 
 Nama    : Galih Mayangga <br/>
