@@ -11,11 +11,19 @@ import android.widget.Toast;
 
 import com.galihmayangga.responsifintech.R;
 import com.galihmayangga.responsifintech.database.DatabaseHelper;
+import com.galihmayangga.responsifintech.database.ShowEmailPref;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class RegisterActivity extends AppCompatActivity {
     DatabaseHelper db;
-    Button buttonRegister;
-    EditText EditTextEmail, EditTextPassword, EditTextConfirmPassword;
+    @BindView(R.id.etEmailReg) EditText  EditTextEmail;
+    @BindView(R.id.etPasswordReg) EditText EditTextPassword;
+    @BindView(R.id.etConfirmPasswordReg) EditText EditTextConfirmPassword;
+    @BindView(R.id.btnRegister) Button buttonRegister;
+    ShowEmailPref showEmailPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
 
-        EditTextEmail = (EditText)findViewById(R.id.etEmailReg);
-        EditTextPassword = (EditText)findViewById(R.id.etPasswordReg);
-        EditTextConfirmPassword = (EditText)findViewById(R.id.etConfirmPasswordReg);
-        buttonRegister = (Button) findViewById(R.id.btnRegister);
 
+        ButterKnife.bind(this);
+        showEmailPref = new ShowEmailPref(this);
 
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +44,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String strEmail = EditTextEmail.getText().toString();
                 String strPassword = EditTextPassword.getText().toString();
                 String strPasswordConf = EditTextConfirmPassword.getText().toString();
+                showEmailPref.saveSPString(ShowEmailPref.SP_EMAIL, strEmail);
+                showEmailPref.saveSPBoolean(ShowEmailPref.SP_SUDAH_LOGIN, true);
                 if (strPassword.equals(strPasswordConf)) {
                     Boolean daftar = db.insertUser(strEmail, strPassword);
                     if (daftar == true) {
