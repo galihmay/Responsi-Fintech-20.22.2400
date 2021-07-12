@@ -1,8 +1,9 @@
 # Responsi-Fintech-20.22.2400
 Responsi Fintech (S1_FINTECH1(SI115))
 
-Daftar Responsi :
-Responsi 1 = 6 Juli 2021 
+Daftar Responsi :<br/>
+Responsi 1 = 6 Juli 2021 <br/>
+Responsi 2 = 10 - 12 Juli 2021 
 
 Nama    : Galih Mayangga <br/>
 NIM     : 20.22.2400 <br/>
